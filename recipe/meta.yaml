@@ -23,7 +23,7 @@ requirements:
   run:
     - python
     - graphql-core >=3.2,<3.3
-    - typing_extensions >=4.1,<5  # [py<38]
+    - typing_extensions >=4.1  # [py<38]
 
 test:
   source_files:
@@ -46,6 +46,10 @@ about:
   license: MIT
   license_family: MIT
   summary: Relay library for graphql-core
+  description: |
+    A library to help construct a graphql-py server supporting react-relay
+  dev_url: https://github.com/graphql-python/graphql-relay-py
+  doc_url: https://github.com/graphql-python/graphql-relay-py/blob/main/README.md
 
 extra:
   recipe-maintainers:
