@@ -9,19 +9,19 @@ source:
   sha256: 1ff1c51298356e481a0be009ccdff249832ce53f30559c1338f22a0e0d17250c
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install -vv .
+  skip: True  # [py<36]
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
     - poetry-core >=1,<2
     - setuptools >=59,<70
     - wheel
   run:
-    - python >=3.6
+    - python
     - graphql-core >=3.2,<3.3
     - typing_extensions >=4.1,<5  # [py<38]
 
