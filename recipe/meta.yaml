@@ -30,7 +30,7 @@ test:
     - tests
   requires:
     - pip
-    - pytest >=6.2,<7
+    - pytest >=6.2
     - pytest-asyncio >=0.18,<1
     - pytest-cov >=3.0
     - pytest-describe >=2.0
