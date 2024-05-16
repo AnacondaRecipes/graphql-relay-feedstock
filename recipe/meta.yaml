@@ -9,19 +9,21 @@ source:
   sha256: 1ff1c51298356e481a0be009ccdff249832ce53f30559c1338f22a0e0d17250c
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install -vv .
+  script: {{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation
+  skip: True  # [py<36]
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
     - poetry-core >=1,<2
+    - setuptools >=59,<70
+    - wheel
   run:
-    - python >=3.6
+    - python
     - graphql-core >=3.2,<3.3
-    - typing_extensions >=4.1,<5
+    - typing_extensions >=4.1,<5  # [py<38]
 
 test:
   source_files:
@@ -29,10 +31,9 @@ test:
   requires:
     - pip
     - pytest >=6.2,<7
-    - pytest-asyncio >=0.14,<1
-    - pytest-cov >=2.11,<3
-    - pytest-describe >=1,<2
-    - pyyaml >=5.4,<6
+    - pytest-asyncio >=0.18,<1
+    - pytest-cov >=3.0,<4.0
+    - pytest-describe >=2.0,<3.0
   imports:
     - graphql_relay
   commands:
@@ -45,6 +46,10 @@ about:
   license: MIT
   license_family: MIT
   summary: Relay library for graphql-core
+  description: |
+    A library to help construct a graphql-py server supporting react-relay
+  dev_url: https://github.com/graphql-python/graphql-relay-py
+  doc_url: https://github.com/graphql-python/graphql-relay-py/blob/main/README.md
 
 extra:
   recipe-maintainers:
