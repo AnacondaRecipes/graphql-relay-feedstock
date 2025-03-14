@@ -18,7 +18,7 @@ requirements:
     - pip
     - python
     - poetry-core >=1,<2
-    - setuptools >=59,<70
+    - setuptools >=59
     - wheel
   run:
     - python
@@ -41,7 +41,7 @@ test:
     - pytest --cov graphql_relay --no-cov-on-fail --cov-report term-missing:skip-covered --cov-fail-under 91
 
 about:
-  home: https://github.com/graphql-python/graphql-relay-py
+  home: https://github.com/theacodes/cmarkgfm
   license_file: LICENSE
   license: MIT
   license_family: MIT
