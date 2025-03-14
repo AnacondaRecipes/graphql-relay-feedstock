@@ -2,4 +2,4 @@ build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY313: yes
 
 channels:
-- https://staging.continuum.io/prefect/fs/pytest-benchmark-feedstock/pr6/41a08f5
+- https://staging.continuum.io/prefect/fs/graphql-core-feedstock/pr6/fd2b2fc
